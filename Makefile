@@ -101,7 +101,7 @@ clean:
 	@echo "$(RED)CLEANING BUILD DIRECTORIES...$(RESET)"
 	$(RM) -r $(BUILD_DIR)
 	@echo "$(RED)CLEANING EXTRA FILES...$(RESET)"
-	$(RM) *.out *.gch
+	$(RM) a.out libft.h.gch
 
 fclean: clean
 	@echo "$(RED)CLEANING ARCHIVE FILE...$(RESET)"
