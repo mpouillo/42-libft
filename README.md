@@ -1,29 +1,65 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mpouillo <mpouillo@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/07 16:27:26 by mpouillo          #+#    #+#             */
-/*   Updated: 2025/11/26 10:11:53 by mpouillo         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+# Libft
 
-#ifndef LIBFT_H
-# define LIBFT_H
+*This project has been created as a part of the 42 curriculum by mpouillo.*
 
-# include <stddef.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <limits.h>
+### Description:
 
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}	t_list;
+Libft is a library containing many useful general purpose functions. It is the first real project of the 42 Common Core (excluding c-piscine-reloaded).
 
+It is composed of the following functions:
+
+Mandatory part:
+- isalpha
+- isdigit
+- isalnum
+- isascii
+- isprint
+- strlen
+- memset
+- bzero
+- memcpy
+- memmove
+- strlcpy
+- strlcat
+- toupper
+- tolower
+- strchr
+- strrchr
+- strncmp
+- memchr
+- memcmp
+- strnstr
+- atoi
+- calloc
+- strdup
+- substr
+- strjoin
+- strtrim
+- split
+- itoa
+- strmapi
+- striteri
+- putchar_fd
+- putstr_fd
+- putendl_fd
+- putnbr_fd
+
+Bonus part:
+- lstnew
+- lstadd_front
+- lstsize
+- lstlast
+- lstadd_back
+- lstdelone
+- lstclear
+- lstiter
+- lstmap
+
+### Usage
+
+Here are the prototypes for each function:
+```c
+//		mandatory part
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -58,6 +94,8 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
+//		bonus part
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
@@ -67,5 +105,30 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+```
 
-#endif
+### Instructions
+
+Compile the library with the following command:
+```shell
+make all
+```
+
+To compile with bonuses, run:
+```shell
+make bonus
+```
+
+To use the library, include it with:
+```c
+#include "libft.h"
+```
+and compile with the following command:
+```shell
+cc -Wall -Werror -Wextra your_files.c -L. -lft
+```
+
+### Resources:
+
+- [Project link](https://projects.intra.42.fr/projects/42cursus-libft) (requires access to the 42 intra)
+- AI was not used in this project.
